@@ -68,3 +68,8 @@ dane_10 <- dplyr::group_by(dane_10, species)
 
 #[plicz srednia wartosc wszystkich kolumn liczbowych
 dane_10 <- dplyr::summarise(dane_10, dplyr::across(dplyr::where(\(i) is.numeric(i)), \(i) mean(i)))
+
+dane_11 <- dane |>
+  dplyr::mutate(suma = sepal.length + sepal.width+petal.length + petal.width) |>
+  dplyr::group_by(species) |>
+  dplyr::summarise(dplyr::across(dplyr::where(\(i) is.numeric(i)), \(i) mean(i)))
