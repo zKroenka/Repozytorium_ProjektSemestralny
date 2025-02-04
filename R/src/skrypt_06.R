@@ -38,9 +38,3 @@ dane_szalone <- dplyr::inner_join(data_1, data_3, by = dplyr::join_by(sample.id)
 
 #łĄCZENIE WSZYSTKIEGO - FULL JOIN
   dane_full1 <- dplyr::full_join(data_1, data_2)
-
-#Semi join
-dane_semi <- dplyr::semi_join(data_1, data_2)
-
-#anti join
-dane_anty <- dplyr::anti_join(data_3, data_1)
